@@ -15,6 +15,7 @@ keywords:
   - apm tools
   - application performance monitoring
 ---
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-vs-jaeger/"/>
 </head>
@@ -22,6 +23,16 @@ keywords:
 OpenTelemetry and Jaeger are both open-source projects under Cloud Native Computing Foundation. In this article, let us understand the key concepts involved in both projects, their features, and their differences.
 
 <!--truncate-->
+
+With Figure
+
+<figure data-zoomable>
+    <img src="/img/blog/2022/03/opentelemetry_vs_jaeger.webp"/>
+</figure>
+
+---
+
+Without Figure
 
 ![Cover Image](/img/blog/2022/03/opentelemetry_vs_jaeger.webp)
 
@@ -32,9 +43,8 @@ Jaeger is an open-source tool focused on distributed tracing of requests in a mi
 Both OpenTelemetry and Jaeger enable application owners to set up monitoring and observability to measure application performance. But their solutions are meant for different problems. While OpenTelemetry helps generate telemetry data, Jaeger is a distributed tracing tool.
 
 > **What is Observability?**<br></br>
-In control theory, the term “observability” states that a system is observable if the internal states of the system can be determined by looking at its inputs and outputs.
-For distributed software systems, observability means how well we are able to troubleshoot our systems for performance issues with collected data from the system.
-> 
+> In control theory, the term “observability” states that a system is observable if the internal states of the system can be determined by looking at its inputs and outputs.
+> For distributed software systems, observability means how well we are able to troubleshoot our systems for performance issues with collected data from the system.
 
 ## What is OpenTelemetry?
 
