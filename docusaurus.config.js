@@ -179,12 +179,7 @@ const config = {
             return `https://github.com/SigNoz/signoz.io/edit/main/${nextVersionDocsDirPath}/${docPath}`;
           },
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -204,8 +199,9 @@ const config = {
   // plugins: ["posthog-docusaurus"],
   plugins: [
     require.resolve('docusaurus-plugin-image-zoom'),
+    process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
     [
-      "@docusaurus/plugin-content-blog",
+      "@signoz/plugin-content-blog",
       {
         /**
          * Required for any multi-instance plugin
@@ -221,6 +217,25 @@ const config = {
          */
         path: "./opentelemetry",
         blogTitle: "OpenTelemetry",
+      },
+    ],
+    [
+      "@signoz/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "blog",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "blog",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./blog",
+        blogTitle: "Blog",
       },
     ],
     [
@@ -270,7 +285,7 @@ const config = {
         ],
       },
     ],
-  ],
+  ].filter(Boolean),
 
   // plugins: ['@docusaurus/plugin-google-gtag'],
 

@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@signoz/plugin-content-blog": {
+      "signature": "9f0ca8d9f8e7e68499cc8c37ed48b746",
+      "file": true
+    }
+  }
+}
